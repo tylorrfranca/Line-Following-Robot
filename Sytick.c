@@ -38,3 +38,7 @@ void delayUs(unsigned long delay){
 	while ((NVIC_ST_CTRL_R&NVIC_ST_CTRL_COUNT)==0) {} 
   NVIC_ST_CTRL_R &= ~NVIC_ST_CTRL_ENABLE; // disable SysTick timer
 }
+
+unsigned long SysTickValue(void) {
+    return NVIC_ST_CURRENT_R;
+}

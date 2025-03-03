@@ -46,29 +46,45 @@ void CollectSensorData(void){
         GPIO_PORTB_DATA_R |= 0x03;  // PB0 and PB1 = 1 
         
         //Charge capacitors by setting PE3 as output and high
-        GPIO_PORTE_DIR_R |= 0x08;  // Set PE3 as output
-        GPIO_PORTE_DATA_R |= 0x08; // Set PE3 HIGH
+        GPIO_PORTE_DIR_R  |= 0x0F;  // Set PE0-3 as output
+				GPIO_PORTD_DIR_R  |= 0x0F;  // Set PD0-3 as output
+        GPIO_PORTE_DATA_R |= 0x0F; // Set PE0-3 HIGH
+        GPIO_PORTD_DATA_R |= 0x0F; // Set PD0-3 HIGH
         
         //Wait 10 µs
         delayUs(10);
         
-        //Set PE3 as input
-        GPIO_PORTE_DIR_R &= ~0x08; // Set PE3 as input
-			
-				for(int i=0; i<10000;i++){
-					sensorData[0] = GPIO_PORTE_DATA_R & 0x08;
-					  if(sensorData[0]){ 
-                GPIO_PORTB_DATA_R |= 0x10;  // Set PB4 high if PE3 is high
-								GPIO_PORTF_DATA_R = 0x02;
-            }
-            else{
-                GPIO_PORTB_DATA_R &= ~0x10; // Set PB4 low if PE3 is low
-								GPIO_PORTF_DATA_R = 0x08;
-            }
-				}
+        //Set PE0-3 and PD0-3 as input
+        GPIO_PORTE_DIR_R &= ~0x0F; // Set PE3 as input
+				GPIO_PORTD_DIR_R &= ~0x0F; // Set PE3 as input
+	
+				delayUs(100);
+	
+					
+				sensorData[0] = (GPIO_PORTE_DATA_R & 0x08) ? 1 : 0;
+				sensorData[1] = (GPIO_PORTE_DATA_R & 0x04) ? 1 : 0;
+				sensorData[2] = (GPIO_PORTE_DATA_R & 0x02) ? 1 : 0;
+				sensorData[3] = (GPIO_PORTE_DATA_R & 0x01) ? 1 : 0;
+
+				sensorData[4] = (GPIO_PORTD_DATA_R & 0x08) ? 1 : 0;
+				sensorData[5] = (GPIO_PORTD_DATA_R & 0x04) ? 1 : 0;
+				sensorData[6] = (GPIO_PORTD_DATA_R & 0x02) ? 1 : 0;
+				sensorData[7] = (GPIO_PORTD_DATA_R & 0x01) ? 1 : 0;
+
+					
+					
+//				if(sensorData[7]){ 
+//						GPIO_PORTB_DATA_R |= 0x10;  // Set PB4 high if PE3 is high
+//						GPIO_PORTF_DATA_R = 0x02;
+//				}
+//				else{
+//						GPIO_PORTB_DATA_R &= ~0x10; // Set PB4 low if PE3 is low
+//						GPIO_PORTF_DATA_R = 0x08;
+//					}
 				GPIO_PORTB_DATA_R &= ~0x03;
-				delayMs(10);
+   			delayUs(1000);
 }
+
 
 
 

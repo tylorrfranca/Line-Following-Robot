@@ -10,3 +10,5 @@ void PortE_Init(void);
 void PortD_Init(void);
 
 void PortB_Init(void);
+
+unsigned long SysTickValue(void);
