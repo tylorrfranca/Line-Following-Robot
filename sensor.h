@@ -12,3 +12,7 @@ void PortD_Init(void);
 void PortB_Init(void);
 
 unsigned long SysTickValue(void);
+
+int CalculateReflectancePosition(void);
+
+void CollectSensorData(void);

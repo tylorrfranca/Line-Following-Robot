@@ -396,11 +396,6 @@
               <FilePath>.\PLL.c</FilePath>
             </File>
             <File>
-              <FileName>SensorTest.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\SensorTest.c</FilePath>
-            </File>
-            <File>
               <FileName>Sytick.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Sytick.c</FilePath>
@@ -414,6 +409,21 @@
               <FileName>Sensor.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>Motors.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Motors.c</FilePath>
+            </File>
+            <File>
+              <FileName>LineFollower.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LineFollower.c</FilePath>
+            </File>
+            <File>
+              <FileName>FrontSensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FrontSensor.c</FilePath>
             </File>
           </Files>
         </Group>

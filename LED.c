@@ -1,4 +1,3 @@
-
 // Line Follower Sensor Test Code 
 // Created by TYLOR FRANCA 
 // February 2025
@@ -11,11 +10,17 @@
 #include "LED.h"
 
 void PortF_Init(void){
-  SYSCTL_RCGC2_R |= 0x20;       //Enable clock for Port B
-  volatile unsigned long delay = SYSCTL_RCGC2_R;
+  // Enable clock for Port F
+  SYSCTL_RCGC2_R |= 0x20;       // Enable clock for Port F
+  volatile unsigned long delay = SYSCTL_RCGC2_R;  // Allow time for clock to stabilize
+  delay = SYSCTL_RCGC2_R;       // Extra delay to ensure stability
 
-  GPIO_PORTF_DIR_R   |= 0x1F;  //PB0,1,4 as outputs
-  GPIO_PORTF_AFSEL_R &= ~0x1F;  //Disable alternate function
-  GPIO_PORTF_AMSEL_R &= ~0x1F; //Disable analog
-  GPIO_PORTF_DEN_R   |= 0x1F; //Enable digital
+  GPIO_PORTF_LOCK_R = 0x4C4F434B;   // Unlock GPIO Port F
+  GPIO_PORTF_CR_R = 0x01;          // Allow changes to PF0
+  
+  GPIO_PORTF_DIR_R = 0x01;         // PF0 as output
+  GPIO_PORTF_AFSEL_R &= ~0x01;     // Disable alternate function on PF0
+  GPIO_PORTF_AMSEL_R &= ~0x01;     // Disable analog on PF0
+  GPIO_PORTF_DEN_R |= 0x01;        // Enable digital on PF0
+  GPIO_PORTF_DATA_R &= ~0x01;      // Initialize PF0 to 0
 }
