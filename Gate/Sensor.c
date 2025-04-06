@@ -1,4 +1,16 @@
+/*
+Project: Line Following Robot
+Sensor.c
+Runs on TM4C123
+Student: Tylor Franca
+Class: CECS 497 - Spring 2025
+Major: Computer Engineering
+School: CSULB
+Date: 4/6/2025
 
+Description: Implementation of IR sensor interface with TM4C123
+             Provides functions for obstacle detection and distance measurement
+*/
 
 #include "Sensor.h"
 #include "Servo.h"

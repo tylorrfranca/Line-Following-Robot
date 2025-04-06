@@ -1,3 +1,17 @@
+/*
+Project: Line Following Robot
+Servo.c
+Runs on TM4C123
+Student: Tylor Franca
+Class: CECS 497 - Spring 2025
+Major: Computer Engineering
+School: CSULB
+Date: 4/6/2025
+
+Description: Implementation for controlling servo motors with TM4C123
+             Uses PWM for servo control
+*/
+
 // Servo.c
 // Implementation for controlling servo motors with TM4C123
 // Uses PWM for servo control

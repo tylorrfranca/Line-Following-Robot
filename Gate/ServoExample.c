@@ -1,3 +1,17 @@
+/*
+Project: Line Following Robot
+ServoExample.c
+Runs on TM4C123
+Student: Tylor Franca
+Class: CECS 497 - Spring 2025
+Major: Computer Engineering
+School: CSULB
+Date: 4/6/2025
+
+Description: Example program demonstrating servo motor control
+             with TM4C123 microcontroller
+*/
+
 // ServoExample.c
 // Example program demonstrating servo motor control
 // with TM4C123 microcontroller

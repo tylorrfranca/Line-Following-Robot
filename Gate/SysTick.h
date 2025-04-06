@@ -1,6 +1,16 @@
+/*
+Project: Line Following Robot
+SysTick.h
+Runs on TM4C123
+Student: Tylor Franca
+Class: CECS 497 - Spring 2025
+Major: Computer Engineering
+School: CSULB
+Date: 4/6/2025
 
-
-
+Description: Header file for SysTick timer interface with TM4C123
+             Provides delay functions in microseconds, milliseconds, and seconds
+*/
 
 #include <stdint.h>
 #include "tm4c123gh6pm.h"

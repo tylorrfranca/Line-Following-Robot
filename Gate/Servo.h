@@ -1,3 +1,17 @@
+/*
+Project: Line Following Robot
+Servo.h
+Runs on TM4C123
+Student: Tylor Franca
+Class: CECS 497 - Spring 2025
+Major: Computer Engineering
+School: CSULB
+Date: 4/6/2025
+
+Description: Header file for controlling servo motors with TM4C123
+             Uses PWM for servo control
+*/
+
 // Servo.h
 // Header file for controlling servo motors with TM4C123
 // Uses PWM for servo control
